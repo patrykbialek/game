@@ -10,7 +10,7 @@ import * as fromModels from '../../models';
 })
 export class PlayersComponent implements OnInit {
   
-  @Input() playerList$: Observable<Partial<fromModels.Player>[]>;
+  @Input() playerList: Partial<fromModels.Player>[];
 
   constructor() { }
 

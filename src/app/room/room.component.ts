@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, of, interval } from 'rxjs';
 
 import * as fromModels from '../shared/models';
+import { PlayersHttpService } from '../shared/services/players.service';
+import { tap, distinctUntilChanged } from 'rxjs/operators';
 
 @Component({
   selector: 'app-room',
@@ -11,10 +13,14 @@ import * as fromModels from '../shared/models';
 export class RoomComponent implements OnInit {
   status = 'created';
 
-  playerList$: Observable<Partial<fromModels.Player>[]>;
+  playerList;
+  playerList$;
+
   playerRanking$: Observable<Partial<fromModels.Player>[]>;
 
-  constructor() { }
+  constructor(
+    private playersService: PlayersHttpService,
+  ) { }
 
   ngOnInit() {
     this.playerList$ = of([
@@ -119,6 +125,21 @@ export class RoomComponent implements OnInit {
         currentPrize: 0,
       },
     ]);
+
+    this.getPlayers();
+
+    setInterval(() => {
+      this.getPlayers();
+    }, 2000)
+  }
+
+  getPlayers() {
+    this.playersService
+    .getPlayers()
+    .pipe(
+      tap(console.log),
+      tap(response => this.playerList = response)
+    ).subscribe();
   }
 
 }

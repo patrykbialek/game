@@ -1,6 +1,8 @@
 export interface Player {
-  nick: string;
+  name: string;
   isAdmin: boolean;
   currentPrize: number;
   loggedInPlayer: boolean;
+  isPlaying: false;
+  levelAchieved: string;
 }
