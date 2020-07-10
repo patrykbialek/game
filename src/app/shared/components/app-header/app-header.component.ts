@@ -1,7 +1,6 @@
 import { Component, } from '@angular/core';
 import { Router } from '@angular/router';
 import { tap } from 'rxjs/operators';
-import { AuthenticationFacadeService } from '@authentication/store';
 
 @Component({
   selector: 'app-header',
@@ -9,23 +8,12 @@ import { AuthenticationFacadeService } from '@authentication/store';
   styleUrls: ['./app-header.component.scss'],
 })
 export class AppHeaderComponent {
-  user$ = this.authService.user$;
+  user$ = null;
 
   constructor(
-    private authService: AuthenticationFacadeService,
     private router: Router,
   ) { }
 
   onLogout() {
-    this.authService.logoutUser();
-
-    this.authService.isSuccess$
-      .pipe(
-        tap(response => {
-          if (response) {
-            this.router.navigate(['./login']);
-          }
-        }),
-      ).subscribe();
   }
 }
