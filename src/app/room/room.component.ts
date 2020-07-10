@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable, of, interval } from 'rxjs';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Observable, of, interval, Subscription } from 'rxjs';
 
 import * as fromModels from '../shared/models';
 import { PlayersHttpService } from '../shared/services/players.service';
@@ -10,7 +10,7 @@ import { tap, distinctUntilChanged } from 'rxjs/operators';
   templateUrl: './room.component.html',
   styleUrls: ['./room.component.scss']
 })
-export class RoomComponent implements OnInit {
+export class RoomComponent implements OnDestroy, OnInit {
   status = 'created';
 
   playerList;
@@ -18,9 +18,15 @@ export class RoomComponent implements OnInit {
 
   playerRanking$: Observable<Partial<fromModels.Player>[]>;
 
+  private subscription$ = new Subscription();
+
   constructor(
     private playersService: PlayersHttpService,
   ) { }
+
+  ngOnDestroy() {
+    this.subscription$.unsubscribe();
+  }
 
   ngOnInit() {
     this.playerList$ = of([
@@ -134,12 +140,14 @@ export class RoomComponent implements OnInit {
   }
 
   getPlayers() {
-    this.playersService
-    .getPlayers()
-    .pipe(
-      tap(console.log),
-      tap(response => this.playerList = response)
-    ).subscribe();
+    this.subscription$.add(
+      this.playersService
+        .getPlayers()
+        .pipe(
+          tap(console.log),
+          tap(response => this.playerList = response)
+        ).subscribe()
+    );
   }
 
 }

@@ -10,24 +10,23 @@
     <div class="c-section-content u-border">
       <div class="o-grid o-grid--flush">
         <div class="o-grid__cell u-1/2">
-          <div class="c-player-list u-padding">
+          <div class="c-game u-padding">
             <header class="o-block">
               <h4>Pytanie</h4>
             </header>
-            <div class="c-player-list__list">
-              <!-- <mat-list role="list">
-                <ng-container *ngFor="let player of players">
-                  <mat-list-item role="listitem" [ngClass]="{ 'u-font-weight-bold ': player.loggedInPlayer }"
-                    [ngStyle]="{ 'color' : player.isAdmin ? '#FB8C00' : '' }">
-                    <div style="display: flex; align-items: center;" matTooltipPosition="right"
-                      [matTooltip]="player.isAdmin ? 'Administrator gry' : ''">
-                      <span class="u-margin-right-small">{{ player.nick }}</span>
-                      <mat-icon *ngIf="player.isAdmin" style="color: #FB8C00">stars</mat-icon>
+            <div class="c-game__question u-text-huge u-margin-bottom-large">
+              Question 1
+            </div>
+            <div class="c-game__answers">
+              <mat-radio-group aria-label="Select an option">
+                <div class="o-grid o-grid--flush">
+                  <ng-container *ngFor="let question of questions">
+                    <div class="o-grid__cell u-1/2 u-text-large u-margin-bottom">
+                      <mat-radio-button [value]="question.name" class="u-border">{{ question.name }}</mat-radio-button>
                     </div>
-                  </mat-list-item>
-                  <mat-divider></mat-divider>
-                </ng-container>
-              </mat-list> -->
+                  </ng-container>
+                </div>
+              </mat-radio-group>
             </div>
           </div>
         </div>

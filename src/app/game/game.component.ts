@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import * as fromModels from '../shared/models';
 import { Observable, of } from 'rxjs';
+import { GameService } from '../shared/services/game.service';
 
 @Component({
   selector: 'app-game',
@@ -13,7 +14,28 @@ export class GameComponent implements OnInit {
 
   playerRanking$: Observable<Partial<fromModels.Player>[]>;
 
-  constructor() { }
+  questions = [
+    {
+      name: 'A. sfsfsdfsf'
+    },
+    {
+      name: 'B. sfsfsdfsf'
+    },
+    {
+      name: 'C. sfsfsdfsf'
+    },
+    {
+      name: 'D. sfsfsdfsf'
+    },
+  ];
+
+  constructor(
+    private gameService: GameService,
+  ) {
+    gameService.messages.subscribe(msg => {
+      console.log("Response from websocket: " + msg);
+    });
+   }
 
   ngOnInit() {
     this.playerRanking$ = of([
