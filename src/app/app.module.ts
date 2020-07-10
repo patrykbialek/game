@@ -12,6 +12,7 @@ import { StartModule } from './start/start.module';
 import { RoomModule } from './room/room.module';
 import { GameModule } from './game/game.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    HttpClientModule,
 
     StartModule,
     RoomModule,
