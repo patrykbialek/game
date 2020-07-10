@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-start',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartComponent implements OnInit {
 
-  constructor() { }
+  startForm: FormGroup;
+
+  @ViewChild('nickHTML') nickHTML: ElementRef;
+
+  constructor(
+    private formBuilder: FormBuilder,
+  ) { }
 
   ngOnInit() {
+    this.startForm = this.formBuilder.group({
+      nick: ['', Validators.required]
+    });
+
+    setTimeout(() => {
+      this.nickHTML.nativeElement.focus();
+    }, 100);
+  }
+
+  onJoin() {
+    //
   }
 
 }

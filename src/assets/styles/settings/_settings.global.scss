@@ -130,6 +130,7 @@ $mq-breakpoints: (
   &__title {
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 96px;
     width: 100%;
   }
@@ -147,7 +148,6 @@ $mq-breakpoints: (
   top: auto;
   left: auto;
   width: 100%;
-  padding-top: 144px;
 }
 
 @import './settings.colors';
