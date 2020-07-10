@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
-export interface Player {
-  nick: string;
-  isAdmin: boolean;
-  currentPrize: number;
-  loggedInPlayer: boolean;
-}
+import * as fromModels from '../shared/models';
+
 @Component({
   selector: 'app-room',
   templateUrl: './room.component.html',
@@ -14,8 +10,8 @@ export interface Player {
 })
 export class RoomComponent implements OnInit {
 
-  playerList$: Observable<Partial<Player>[]>;
-  playerRanking$: Observable<Partial<Player>[]>;
+  playerList$: Observable<Partial<fromModels.Player>[]>;
+  playerRanking$: Observable<Partial<fromModels.Player>[]>;
 
   constructor() { }
 

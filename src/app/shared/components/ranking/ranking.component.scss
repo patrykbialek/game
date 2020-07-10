@@ -1,0 +1,17 @@
+
+.c-ranking {
+  height: 39vh;
+  &__list {
+    overflow: auto;
+    height: 32vh;
+  }
+
+  &__item {
+    display: flex;
+
+    justify-content: space-between;
+    align-self: center;
+
+    width: 100%;
+  }
+}

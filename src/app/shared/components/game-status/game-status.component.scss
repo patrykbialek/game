@@ -1,0 +1,18 @@
+.c-game-status {
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-start-game {
+  width: 100%;
+}
+
+::ng-deep .mat-tooltip {
+  font-size: 12px;
+}
+
+::ng-deep .mat-raised-button {
+  height: 64px;
+}

@@ -10,77 +10,18 @@
     <div class="c-section-content u-border">
       <div class="o-grid o-grid--flush">
         <div class="o-grid__cell u-1/2">
-          <div class="c-player-list u-padding" *ngIf="playerList$ | async as players">
-            <header class="o-block">
-              <h4>Lista graczy ({{ players.length }})</h4>
-            </header>
-            <div class="c-player-list__list">
-              <mat-list role="list">
-                <ng-container *ngFor="let player of players">
-                  <mat-list-item role="listitem"
-                    [ngClass]="{ 'u-font-weight-bold ': player.loggedInPlayer }"
-                    [ngStyle]="{ 'color' : player.isAdmin ? '#FB8C00' : '' }">
-                    <div
-                      style="display: flex; align-items: center;"
-                      matTooltipPosition="right"
-                      [matTooltip]="player.isAdmin ? 'Administrator gry' : ''"
-                      >
-                      <span class="u-margin-right-small">{{ player.nick }}</span>
-                      <mat-icon *ngIf="player.isAdmin" style="color: #FB8C00">stars</mat-icon>
-                    </div>
-                  </mat-list-item>
-                  <mat-divider></mat-divider>
-                </ng-container>
-              </mat-list>
-            </div>
-          </div>
+          <app-players [playerList$]="playerList$"></app-players>
         </div>
         <div class="o-grid__cell u-1/2">
           <div class="o-grid">
             <div class="o-grid__cell u-1/1">
-              <div class="c-game-status u-border-left u-border-bottom u-padding">
-                <button mat-raised-button color="primary" class="c-start-game u-text-large">ZACZNIJ GRĘ</button>
-              </div>
+              <app-game-status></app-game-status>
             </div>
             <div class="o-grid__cell u-1/1">
-              <div class="c-lifebuoys u-border-left u-border-bottom u-padding">
-                <header class="u-margin-bottom o-block">
-                  <h4>Koła ratunkowe</h4>
-                </header>
-
-                <div class="c-lifebuoys__items u-is-inactive">
-                  <a class="c-lifebuoys-action" matTooltip="Odrzuć 2 nieprawidłowe odpowiedzi">
-                    <img src="../../assets/images/fifty-fifty.svg" alt="fifty-fifty">
-                  </a>
-                  <a class="c-lifebuoys-action" matTooltip="Sprawdź czy odpowiedź jest prawidłowa">
-                    <img src="../../assets/images/scanner.svg" alt="scanner">
-                  </a>
-                  <a class="c-lifebuoys-action" matTooltip="Zapytaj bota o podpowiedź">
-                    <img src="../../assets/images/bot.svg" alt="bot">
-                  </a>
-                </div>
-              </div>
+              <app-lifebuoys></app-lifebuoys>
             </div>
             <div class="o-grid__cell u-1/1">
-              <div class="c-ranking u-border-left u-padding" *ngIf="playerRanking$ | async as players">
-                <header class="o-block">
-                  <h4>Ranking graczy</h4>
-                </header>
-                <div class="c-ranking__list">
-                  <mat-list role="list">
-                    <ng-container *ngFor="let player of players">
-                      <mat-list-item role="listitem"
-                        [ngClass]="{ 'u-font-weight-bold ': player.loggedInPlayer }">
-                        <div class="c-ranking__item">
-                          <span class="u-margin-right-small">{{ player.nick }}</span>
-                          <span>{{ player.currentPrize | currency:'PLN ':'symbol':'1.0':'pl' }}</span>
-                        </div>
-                      </mat-list-item>
-                      <mat-divider></mat-divider>
-                    </ng-container>
-                  </mat-list>
-                </div>
-              </div>
+              <app-ranking [playerRanking$]="playerRanking$"></app-ranking>
             </div>
           </div>
         </div>

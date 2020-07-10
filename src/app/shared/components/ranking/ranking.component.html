@@ -1,0 +1,18 @@
+<div class="c-ranking u-border-left u-padding" *ngIf="playerRanking$ | async as players">
+  <header class="o-block">
+    <h4>Ranking graczy</h4>
+  </header>
+  <div class="c-ranking__list">
+    <mat-list role="list">
+      <ng-container *ngFor="let player of players">
+        <mat-list-item role="listitem" [ngClass]="{ 'u-font-weight-bold ': player.loggedInPlayer }">
+          <div class="c-ranking__item">
+            <span class="u-margin-right-small">{{ player.nick }}</span>
+            <span>{{ player.currentPrize | currency:'PLN ':'symbol':'1.0':'pl' }}</span>
+          </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </ng-container>
+    </mat-list>
+  </div>
+</div>

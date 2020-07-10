@@ -1,0 +1,16 @@
+.c-player-list {
+  height: 80vh;
+  overflow: auto;
+  &__list {
+    overflow: auto;
+    height: 70vh;
+  }
+}
+
+::ng-deep .mat-tooltip {
+  font-size: 12px;
+}
+
+::ng-deep .mat-raised-button {
+  height: 64px;
+}

@@ -14,7 +14,6 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     RouterModule,
     AngularMaterialModule,
-
   ],
   exports: [
     AngularMaterialModule,

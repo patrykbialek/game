@@ -11,70 +11,12 @@
   justify-content: flex-start;
 }
 
-.c-game-status {
-  height: 15vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .c-section-content {
   height: 80vh;
 }
 
-.c-player-list {
-  height: 80vh;
-  overflow: auto;
-  &__list {
-    overflow: auto;
-    height: 70vh;
-  }
-}
-
-.c-ranking {
-  height: 39vh;
-  &__list {
-    overflow: auto;
-    height: 32vh;
-  }
-
-  &__item {
-    display: flex;
-
-    justify-content: space-between;
-    align-self: center;
-
-    width: 100%;
-  }
-}
-
-.c-lifebuoys {
-  height: 25vh;
-
-  &-action {
-    padding: 0;
-  }
-  &__items {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    img {
-      width: 72px;
-    }
-
-    &.u-is-inactive {
-      opacity: .45;
-    }
-  }
-}
-
 ::ng-deep .mat-tooltip {
   font-size: 12px;
-}
-
-.c-start-game {
-  width: 100%;
 }
 
 ::ng-deep .mat-raised-button {
