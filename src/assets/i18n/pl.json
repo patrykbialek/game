@@ -1,0 +1,26 @@
+{
+  "Welcome": "Witamy w aplikacji home_budget",
+  "BUDGET_CATEGORY": {
+    "finance": "Finanse",
+    "shopping": "Wydatki podstawowe",
+    "bills": "Dom i rachunki",
+    "health": "Zdrowie i uroda",
+    "clothing": "Odzież i obuwie",
+    "vehicle": "Samochód i transport",
+    "entertainment": "Rozrywka i podróże",
+    "education": "Edukacja",
+    "other": "Pozostałe",
+    "income": "Przychód",
+    "cash": "Gotówka",
+    "all": "Wszystkie"
+  },
+  "QUERY": {
+    "Periods": {
+      "CurrentMonth": "Bieżący miesiąc",
+      "PreviousMonth": "Poprzedni miesiąc",
+      "Last3Months": "Ostatnie 3 miesiące",
+      "Last6Months": "Ostatnie 6 miesiący",
+      "CurrentYear": "Ten rok"
+    }
+  }
+}
