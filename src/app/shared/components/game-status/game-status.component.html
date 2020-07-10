@@ -1,3 +1,9 @@
 <div class="c-game-status u-border-left u-border-bottom u-padding">
-  <button mat-raised-button color="primary" class="c-start-game u-text-large">ZACZNIJ GRĘ</button>
+  <button mat-raised-button color="primary"
+    class="c-start-game u-text-large"
+    *ngIf="status.includes('created') || status.includes('finished')">ZACZNIJ GRĘ</button>
+  <button mat-stroked-button color="primary"
+    class="c-start-game u-text-large"
+    *ngIf="status.includes('active')"
+    disabled>GRA TRWA</button>
 </div>

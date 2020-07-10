@@ -1,0 +1,24 @@
+.c-join-button {
+  width: 100%!important;
+  min-width: unset!important;
+  line-height: 48px;
+}
+
+.c-room-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.c-section-content {
+  height: 80vh;
+}
+
+::ng-deep .mat-tooltip {
+  font-size: 12px;
+}
+
+::ng-deep .mat-raised-button {
+  height: 64px;
+}

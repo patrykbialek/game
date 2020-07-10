@@ -9,6 +9,7 @@ import * as fromModels from '../shared/models';
   styleUrls: ['./room.component.scss']
 })
 export class RoomComponent implements OnInit {
+  status = 'created';
 
   playerList$: Observable<Partial<fromModels.Player>[]>;
   playerRanking$: Observable<Partial<fromModels.Player>[]>;

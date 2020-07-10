@@ -3,14 +3,15 @@
     <h4>Koła ratunkowe</h4>
   </header>
 
-  <div class="c-lifebuoys__items u-is-inactive">
-    <a class="c-lifebuoys-action" matTooltip="Odrzuć 2 nieprawidłowe odpowiedzi">
+  <div class="c-lifebuoys__items" [ngClass]="{ 'u-is-inactive': status.includes('created') || status.includes('finished')}">
+    <a role="button" (click)="onTakeLifebuoys('fifty-fifty')" class="c-lifebuoys-action" matTooltip="Odrzuć 2 nieprawidłowe odpowiedzi"
+      disabled="{ 'u-is-inactive': status.includes('created') || status.includes('finished')}">
       <img src="../../assets/images/fifty-fifty.svg" alt="fifty-fifty">
     </a>
-    <a class="c-lifebuoys-action" matTooltip="Sprawdź czy odpowiedź jest prawidłowa">
+    <a role="button" (click)="onTakeLifebuoys('scanner')"  class="c-lifebuoys-action" matTooltip="Sprawdź czy odpowiedź jest prawidłowa">
       <img src="../../assets/images/scanner.svg" alt="scanner">
     </a>
-    <a class="c-lifebuoys-action" matTooltip="Zapytaj bota o podpowiedź">
+    <a role="button" (click)="onTakeLifebuoys('bot')"  class="c-lifebuoys-action" matTooltip="Zapytaj bota o podpowiedź">
       <img src="../../assets/images/bot.svg" alt="bot">
     </a>
   </div>

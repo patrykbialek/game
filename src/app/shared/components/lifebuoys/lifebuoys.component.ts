@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+export enum Lifebuoy {
+  FiftyFifty = 'fifty-fifty',
+  Scanner = 'scanner',
+  Bot = 'bot',
+}
 
 @Component({
   selector: 'app-lifebuoys',
@@ -7,9 +13,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LifebuoysComponent implements OnInit {
 
+  @Input() status: string;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onTakeLifebuoys(lifebuoy: Lifebuoy) {
+    console.log(lifebuoy)
+  }
 }

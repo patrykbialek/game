@@ -1,6 +1,6 @@
 
 .c-ranking {
-  height: 39vh;
+  height: calc(40vh - 2px);
   &__list {
     overflow: auto;
     height: 32vh;

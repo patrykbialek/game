@@ -13,6 +13,7 @@
   font-size: 12px;
 }
 
+::ng-deep .mat-stroked-button,
 ::ng-deep .mat-raised-button {
   height: 64px;
 }

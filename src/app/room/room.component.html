@@ -15,10 +15,10 @@
         <div class="o-grid__cell u-1/2">
           <div class="o-grid">
             <div class="o-grid__cell u-1/1">
-              <app-game-status></app-game-status>
+              <app-game-status [status]="status"></app-game-status>
             </div>
             <div class="o-grid__cell u-1/1">
-              <app-lifebuoys></app-lifebuoys>
+              <app-lifebuoys [status]="status"></app-lifebuoys>
             </div>
             <div class="o-grid__cell u-1/1">
               <app-ranking [playerRanking$]="playerRanking$"></app-ranking>

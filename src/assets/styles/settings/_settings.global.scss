@@ -148,6 +148,7 @@ $mq-breakpoints: (
   top: auto;
   left: auto;
   width: 100%;
+  min-width: 960px;
 }
 
 @import './settings.colors';
